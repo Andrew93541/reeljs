@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Reels Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <div class="logo">
+                <i class="fab fa-instagram"></i>
+                Reels Clone
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-icon">
+                    <i class="far fa-compass"></i>
+                </button>
+                <button class="nav-icon">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="nav-icon">
+                    <i class="far fa-paper-plane"></i>
+                </button>
+                <button id="createReelBtn">
+                    <i class="fas fa-plus"></i>
+                    Create Reel
+                </button>
+                <div class="profile-section">
+                    <div class="profile-img">
+                        <i class="far fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Music Library Sidebar -->
+            <div class="music-library" id="musicLibrary">
+                <h3>Music Library</h3>
+                <div class="music-list">
+                    <!-- Music tracks will be added here -->
+                </div>
+            </div>
+
+            <!-- Reels Feed -->
+            <div class="reels-container">
+                <!-- Reels will be added here dynamically -->
+            </div>
+
+            <!-- Create Reel Modal -->
+            <div class="modal" id="createReelModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                        <h2>Create Reel</h2>
+                        <button class="next-btn">Next</button>
+                    </div>
+
+                    <div class="creation-container">
+                        <!-- Media Preview Section -->
+                        <div class="preview-section">
+                            <div class="preview-container">
+                                <p class="preview-placeholder">
+                                    <i class="fas fa-photo-video"></i>
+                                    <span>Select photos and videos here</span>
+                                </p>
+                            </div>
+                            
+                            <!-- Creation Tools Sidebar -->
+                            <div class="creation-tools">
+                                <button class="tool-btn" data-tool="gallery">
+                                    <i class="fas fa-images"></i>
+                                    <span>Gallery</span>
+                                </button>
+                                <button class="tool-btn" data-tool="effects">
+                                    <i class="fas fa-magic"></i>
+                                    <span>Effects</span>
+                                </button>
+                                <button class="tool-btn" data-tool="music">
+                                    <i class="fas fa-music"></i>
+                                    <span>Music</span>
+                                </button>
+                                <button class="tool-btn" data-tool="speed">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Speed</span>
+                                </button>
+                                <button class="tool-btn" data-tool="timer">
+                                    <i class="fas fa-stopwatch"></i>
+                                    <span>Timer</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Media Upload Input -->
+                        <input type="file" id="mediaInput" accept="video/*,image/*" style="display: none;">
+                        
+                        <!-- Music Section -->
+                        <div class="music-section" style="display: none;">
+                            <h3>Add Music</h3>
+                            <div class="music-upload">
+                                <input type="file" id="musicInput" accept="audio/*">
+                                <label for="musicInput" class="music-btn">
+                                    <i class="fas fa-music"></i>
+                                    Choose Music from Device
+                                </label>
+                            </div>
+                            <div class="selected-music-info" style="display: none;">
+                                <div class="music-details">
+                                    <i class="fas fa-music"></i>
+                                    <span class="music-name"></span>
+                                </div>
+                                <button class="remove-music-btn">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="music-controls" style="display: none;">
+                                <audio id="audioPlayer" controls></audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add necessary scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="musicLibrary.js"></script>
+    <script src="filters.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
